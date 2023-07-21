@@ -1,0 +1,8 @@
+<div>
+    <input type="text" [(ngModel)]="newTask" placeholder="Dodaj zadanie" />
+    <button (click)="addTask()">Dodaj</button>
+</div>
+<ul>
+    <app-task-item *ngFor="let task of tasks" [task]="task" (removeTask)="removeTask($event)"
+        (toggleTask)="toggleTask($event)"></app-task-item>
+</ul>
