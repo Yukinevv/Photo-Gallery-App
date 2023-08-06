@@ -6,3 +6,6 @@
     <app-task-item *ngFor="let task of tasks" [task]="task" (removeTask)="removeTask($event)"
         (toggleTask)="toggleTask($event)"></app-task-item>
 </ul>
+<div>
+    <button (click)="logOut()">Wyloguj</button>
+</div>

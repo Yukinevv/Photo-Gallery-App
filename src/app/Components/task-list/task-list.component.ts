@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { TaskService } from '../../Services/task-service.service';
 import { Task } from '../../Models/Task';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-task-list',
@@ -12,7 +13,7 @@ export class TaskListComponent implements OnInit {
 
   newTask: string = '';
 
-  constructor(private taskService: TaskService) { }
+  constructor(private taskService: TaskService, private router: Router) { }
 
   ngOnInit() {
     this.tasks = this.taskService.getTasks();
@@ -36,5 +37,9 @@ export class TaskListComponent implements OnInit {
   toggleTask(index: number) {
     this.taskService.toggleTask(index);
     this.tasks = this.taskService.getTasks();
+  }
+
+  logOut() {
+    this.router.navigate(['/login']);
   }
 }

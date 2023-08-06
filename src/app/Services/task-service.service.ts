@@ -23,14 +23,10 @@ export class TaskService {
 
   toggleTask(index: number) {
     //const task = this.tasks.find(el => el.id === index);
-
     //task!.completed = !task!.completed;
-
     //this.removeTask(index);
     //this.addTask(task!.name);
-
     //this.tasks[this.tasks.indexOf(task!)].completed = !this.tasks[this.tasks.indexOf(task!)].completed;
-
     //this.tasks[index - 1].completed = !this.tasks[index - 1].completed;
 
     this.tasks = this.tasks.map(el => {
