@@ -6,6 +6,12 @@
     <app-task-item *ngFor="let task of tasks" [task]="task" (removeTask)="removeTask($event)"
         (toggleTask)="toggleTask($event)"></app-task-item>
 </ul>
+<div class="container">
+    <app-image-list></app-image-list>
+</div>
+<div>
+    <app-file-upload></app-file-upload>
+</div>
 <div>
     <button (click)="logOut()">Wyloguj</button>
 </div>

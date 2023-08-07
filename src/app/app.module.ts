@@ -9,6 +9,8 @@ import { TaskItemComponent } from './Components/task-item/task-item.component';
 import { RegisterFormComponent } from './Components/register-form/register-form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginFormComponent } from './Components/login-form/login-form.component';
+import { FileUploadComponent } from './Components/file-upload/file-upload.component';
+import { ImageListComponent } from './Components/image-list/image-list.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginFormComponent },
@@ -23,7 +25,9 @@ const appRoutes: Routes = [
     TaskListComponent,
     TaskItemComponent,
     RegisterFormComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    FileUploadComponent,
+    ImageListComponent
   ],
   imports: [
     BrowserModule,
