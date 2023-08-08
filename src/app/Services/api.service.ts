@@ -20,11 +20,13 @@ export class ApiService {
     return this.http.post(`${this.apiUrl}/users/login`, user);
   }
 
-  uploadImage(formData: FormData) {
-    return this.http.post(`${this.apiUrl}/images/upload`, formData, { responseType: 'text' });
+  uploadImage(formData: FormData, login: string) {
+    return this.http.post(`${this.apiUrl}/images/upload/${login}`, formData, { responseType: 'text' });
   }
 
-  getImages(): Observable<ImageResponse[]> {
-    return this.http.get<ImageResponse[]>(`${this.apiUrl}/images`);
+  getImages(login: string): Observable<ImageResponse[]> {
+    return this.http.get<ImageResponse[]>(`${this.apiUrl}/images/${login}`);
   }
+
+
 }

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { AppComponent } from './app.component';
 import { TaskListComponent } from './Components/task-list/task-list.component';
@@ -11,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginFormComponent } from './Components/login-form/login-form.component';
 import { FileUploadComponent } from './Components/file-upload/file-upload.component';
 import { ImageListComponent } from './Components/image-list/image-list.component';
+import { SelectedImagePopupComponent } from './Components/selected-image-popup/selected-image-popup.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginFormComponent },
@@ -27,13 +29,15 @@ const appRoutes: Routes = [
     RegisterFormComponent,
     LoginFormComponent,
     FileUploadComponent,
-    ImageListComponent
+    ImageListComponent,
+    SelectedImagePopupComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    ModalModule.forRoot()
   ],
   exports: [RouterModule],
   providers: [],

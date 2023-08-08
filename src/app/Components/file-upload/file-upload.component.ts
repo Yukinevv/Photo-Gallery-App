@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ApiService } from 'src/app/Services/api.service';
+import { LoginFormComponent } from '../login-form/login-form.component';
 
 @Component({
   selector: 'app-file-upload',
@@ -21,7 +22,9 @@ export class FileUploadComponent {
       const formData = new FormData();
       formData.append('image', this.selectedFile, this.selectedFile.name);
 
-      this.apiService.uploadImage(formData).subscribe(
+      const userLogin = localStorage.getItem('userLogin') ?? '';
+
+      this.apiService.uploadImage(formData, userLogin).subscribe(
         (response) => {
           console.log(response);
         },

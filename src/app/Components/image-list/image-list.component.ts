@@ -14,18 +14,26 @@ export class ImageListComponent implements OnInit {
   constructor(private apiService: ApiService, private sanitizer: DomSanitizer) { }
 
   images: Image[] = [];
+  userLogin: string | null = '';
+
+  selectedImage: Image | null = null;
 
   ngOnInit(): void {
+    this.userLogin = localStorage.getItem('userLogin');
     this.fetchImages();
   }
 
-  fetchImages() {
-    this.apiService.getImages().subscribe(
+  onImageClick(image: Image) {
+    this.selectedImage = image;
+  }
+
+  fetchImages(): void {
+    this.apiService.getImages(this.userLogin ?? '').subscribe(
       (response: ImageResponse[]) => {
         response.forEach(item => {
           this.images.push({
             filename: item.filename,
-            imageUrl: this.sanitizer.bypassSecurityTrustUrl('data:image/png;base64,' + item.data)
+            imageUrl: this.sanitizer.bypassSecurityTrustUrl('data:image/png;base64,' + item.data) // konwersja z base64 zapisanego jako string pobranego z API na SafeUrl
           });
         });
       },

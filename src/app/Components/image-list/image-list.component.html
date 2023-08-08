@@ -1,5 +1,8 @@
 <div class="image-list">
     <div class="image-item" *ngFor="let image of images">
-        <img [src]="image.imageUrl" alt="{{image.filename}}">
+        <img [src]="image.imageUrl" alt="{{ image.filename }}" (click)="onImageClick(image)">
     </div>
 </div>
+
+<app-selected-image-popup *ngIf="selectedImage" [selectedImage]="selectedImage"
+    (close)="selectedImage = null"></app-selected-image-popup>

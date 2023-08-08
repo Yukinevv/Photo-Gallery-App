@@ -24,9 +24,11 @@ export class LoginFormComponent implements OnInit {
       return;
     }
 
-    this.apiService.login({login: this.login, password: this.password, email: ''}).subscribe(
+    this.apiService.login({ login: this.login, password: this.password, email: '' }).subscribe(
       (response: any) => {
         console.log('Logged user:', response);
+
+        localStorage.setItem('userLogin', this.login);
 
         this.login = '';
         this.password = '';

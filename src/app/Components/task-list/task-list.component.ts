@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { TaskService } from '../../Services/task-service.service';
 import { Task } from '../../Models/Task';
 import { Router } from '@angular/router';
+import { LoginFormComponent } from '../login-form/login-form.component';
 
 @Component({
   selector: 'app-task-list',
@@ -40,6 +41,7 @@ export class TaskListComponent implements OnInit {
   }
 
   logOut() {
+    localStorage.setItem('userLogin', '');
     this.router.navigate(['/login']);
   }
 }
