@@ -1,6 +1,7 @@
 <div class="image-list">
     <div class="image-item" *ngFor="let image of images">
         <img [src]="image.imageUrl" alt="{{ image.filename }}" (click)="onImageClick(image)">
+        <figcaption>{{ image.filename }}</figcaption>
     </div>
 </div>
 

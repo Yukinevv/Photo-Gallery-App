@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-import { ModalModule } from 'ngx-bootstrap/modal';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppComponent } from './app.component';
 import { TaskListComponent } from './Components/task-list/task-list.component';
@@ -13,6 +13,7 @@ import { LoginFormComponent } from './Components/login-form/login-form.component
 import { FileUploadComponent } from './Components/file-upload/file-upload.component';
 import { ImageListComponent } from './Components/image-list/image-list.component';
 import { SelectedImagePopupComponent } from './Components/selected-image-popup/selected-image-popup.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginFormComponent },
@@ -37,7 +38,8 @@ const appRoutes: Routes = [
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
-    ModalModule.forRoot()
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   exports: [RouterModule],
   providers: [],

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ApiService } from 'src/app/Services/api.service';
-import { LoginFormComponent } from '../login-form/login-form.component';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
 
 @Component({
   selector: 'app-file-upload',
@@ -9,7 +10,7 @@ import { LoginFormComponent } from '../login-form/login-form.component';
 })
 export class FileUploadComponent {
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private dialog: MatDialog) { }
 
   selectedFile: File | undefined;
 
@@ -18,22 +19,33 @@ export class FileUploadComponent {
   }
 
   uploadImage() {
-    if (this.selectedFile) {
-      const formData = new FormData();
-      formData.append('image', this.selectedFile, this.selectedFile.name);
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      width: '400px',
+    });
 
-      const userLogin = localStorage.getItem('userLogin') ?? '';
+    dialogRef.afterClosed().subscribe(result => {
+      if (result === false) {
+        return;
+      }
 
-      this.apiService.uploadImage(formData, userLogin).subscribe(
-        (response) => {
-          console.log(response);
-        },
-        (error) => {
-          console.error('Image upload failed', error);
-        }
-      );
-    }
+      const userLogin = localStorage.getItem('userLogin') ?? "";
+      if (userLogin === "") return;
+
+      if (this.selectedFile) {
+        const formData = new FormData();
+        formData.append('image', this.selectedFile, this.selectedFile.name);
+
+        this.apiService.uploadImage(formData, userLogin).subscribe(
+          (response) => {
+            console.log(response);
+            window.location.reload();
+          },
+          (error) => {
+            console.error('Image upload failed', error);
+          }
+        );
+      }
+    });
   }
-
 
 }

@@ -28,5 +28,11 @@ export class ApiService {
     return this.http.get<ImageResponse[]>(`${this.apiUrl}/images/${login}`);
   }
 
+  deleteImage(id: string) {
+    return this.http.delete(`${this.apiUrl}/images/delete/${id}`, { responseType: 'text' });
+  }
 
+  changeFilename(id: string, newFilename: string) {
+    return this.http.put(`${this.apiUrl}/images/editFilename/${id}/${newFilename}`, { responseType: 'text' });
+  }
 }
