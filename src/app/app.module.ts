@@ -14,11 +14,13 @@ import { FileUploadComponent } from './Components/file-upload/file-upload.compon
 import { ImageListComponent } from './Components/image-list/image-list.component';
 import { SelectedImagePopupComponent } from './Components/selected-image-popup/selected-image-popup.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CategorieListComponent } from './Components/categorie-list/categorie-list.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginFormComponent },
   { path: 'register', component: RegisterFormComponent },
   { path: 'todo', component: TaskListComponent },
+  { path: 'categorieList', component: CategorieListComponent },
   { path: '', redirectTo: 'login', pathMatch: 'full' }
 ];
 
@@ -32,6 +34,7 @@ const appRoutes: Routes = [
     FileUploadComponent,
     ImageListComponent,
     SelectedImagePopupComponent,
+    CategorieListComponent,
   ],
   imports: [
     BrowserModule,

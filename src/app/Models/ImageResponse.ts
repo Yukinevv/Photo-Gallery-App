@@ -3,4 +3,5 @@ export interface ImageResponse {
     filename: string;
     data: string;
     login: string;
+    category: string;
 }

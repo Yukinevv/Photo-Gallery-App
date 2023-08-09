@@ -42,7 +42,7 @@ export class LoginFormComponent implements OnInit {
   }
 
   goToMainPage() {
-    this.router.navigate(['/todo']);
+    this.router.navigate(['/categorieList']);
   }
 
   goToRegisterPage() {

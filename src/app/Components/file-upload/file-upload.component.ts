@@ -29,13 +29,14 @@ export class FileUploadComponent {
       }
 
       const userLogin = localStorage.getItem('userLogin') ?? "";
-      if (userLogin === "") return;
+      const category = localStorage.getItem('category') ?? "";
+      if (userLogin === "" || category === "") return;
 
       if (this.selectedFile) {
         const formData = new FormData();
         formData.append('image', this.selectedFile, this.selectedFile.name);
 
-        this.apiService.uploadImage(formData, userLogin).subscribe(
+        this.apiService.uploadImage(formData, userLogin, category).subscribe(
           (response) => {
             console.log(response);
             window.location.reload();

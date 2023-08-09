@@ -44,4 +44,8 @@ export class TaskListComponent implements OnInit {
     localStorage.setItem('userLogin', '');
     this.router.navigate(['/login']);
   }
+
+  goToCategorieList() {
+    this.router.navigate(['/categorieList']);
+  }
 }

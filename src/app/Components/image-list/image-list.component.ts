@@ -15,11 +15,13 @@ export class ImageListComponent implements OnInit {
 
   images: Image[] = [];
   userLogin: string = '';
+  category: string = '';
 
   selectedImage: Image | null = null;
 
   ngOnInit(): void {
     this.userLogin = localStorage.getItem('userLogin') ?? "";
+    this.category = localStorage.getItem('category') ?? "";
     this.fetchImages();
   }
 
@@ -28,12 +30,12 @@ export class ImageListComponent implements OnInit {
   }
 
   fetchImages(): void {
-    if (this.userLogin === "") return;
+    if (this.userLogin === "" || this.category === "") return;
 
-    this.apiService.getImages(this.userLogin).subscribe(
+    this.apiService.getImages(this.userLogin, this.category).subscribe(
       (response: ImageResponse[]) => {
         response.forEach(item => {
-          this.images.push({
+          this.images.push({ // do typu Image daje tylko te dane z ImageResponse, ktore wykorzystuje na froncie
             id: item.id,
             filename: item.filename,
             imageUrl: this.sanitizer.bypassSecurityTrustUrl('data:image/png;base64,' + item.data) // konwersja z base64 zapisanego jako string pobranego z API na SafeUrl
