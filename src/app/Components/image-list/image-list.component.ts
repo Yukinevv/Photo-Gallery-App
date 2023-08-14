@@ -19,14 +19,21 @@ export class ImageListComponent implements OnInit {
 
   selectedImage: Image | null = null;
 
+  filteredImages: Image[] = [];
+
   ngOnInit(): void {
     this.userLogin = localStorage.getItem('userLogin') ?? "";
     this.category = localStorage.getItem('category') ?? "";
     this.fetchImages();
+    this.filteredImages = this.images;
   }
 
   onImageClick(image: Image) {
     this.selectedImage = image;
+  }
+
+  updateFilteredItems(filteredData: Image[]) {
+    this.filteredImages = filteredData;
   }
 
   fetchImages(): void {

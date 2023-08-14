@@ -1,0 +1,29 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 32px;
+  letter-spacing: 2px;
+  flex-grow: 1;
+  margin-top: 15px;
+}
+
+button {
+  background-color: #408fa9;
+  color: #fff;
+  border: none;
+  padding: 0 20px;
+  height: 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+button:hover {
+  background-color: #395db0;
+}

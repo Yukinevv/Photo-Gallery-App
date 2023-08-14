@@ -1,11 +1,8 @@
-<!--<div *ngIf="AppComponent.isLoggedIn">
-    <h1>ToDo App</h1>
-    <app-task-list></app-task-list>
+<div class="header">
+    <h1>Photo Gallery App</h1>
+
+    <button *ngIf="isButtonVisible && (isLoggedIn$ | async)" (click)="togglePopup()">Uzytkownik</button>
+    <app-settings-popup *ngIf="isPopupVisible" (close)="togglePopup()"></app-settings-popup>
 </div>
 
-<div *ngIf="!isLoggedIn">
-    <app-login-form></app-login-form>
-</div>-->
-
-<h1>ToDo App</h1>
 <router-outlet></router-outlet>

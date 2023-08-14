@@ -1,21 +1,23 @@
 <div class="container">
-    <h2>User Login Form</h2>
-    <form>
-        <div class="form-group">
-            <label for="login">Login:</label>
-            <input type="text" id="login" name="login" [(ngModel)]="login" required>
-        </div>
-        <div class="form-group">
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" [(ngModel)]="password" required>
-        </div>
-        <div class="form-group">
-            <button type="submit" (click)="loginUser()">Login</button>
-        </div>
-    </form>
+    <div class="inner-container">
+        <h2>Zaloguj sie na swoje konto</h2>
+        <form>
+            <div class="form-group">
+                <label for="login">Login:</label>
+                <input type="text" id="login" name="login" [(ngModel)]="login" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Haslo:</label>
+                <input type="password" id="password" name="password" [(ngModel)]="password" required>
+            </div>
+            <div class="form-group" style="margin-top: 15px;">
+                <button type="submit" (click)="loginUser()">Zaloguj</button>
+            </div>
+        </form>
 
-    <div class="form-group">
-        <p>Nie masz konta?</p>
-        <button (click)="goToRegisterPage()">Zarejestruj sie</button>
+        <div class="form-group column-align-center">
+            <p>Nie masz konta?</p>
+            <button (click)="goToRegisterPage()">Zarejestruj sie</button>
+        </div>
     </div>
 </div>

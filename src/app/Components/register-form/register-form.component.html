@@ -1,29 +1,31 @@
 <div class="container">
-    <h2>User Registration Form</h2>
-    <form>
-        <div class="form-group">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" [(ngModel)]="login" required>
-        </div>
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" [(ngModel)]="email" required>
-        </div>
-        <div class="form-group">
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" [(ngModel)]="password1" required>
-        </div>
-        <div class="form-group">
-            <label for="confirm_password">Confirm Password:</label>
-            <input type="password" id="confirm_password" name="confirm_password" [(ngModel)]="password2" required>
-        </div>
-        <div class="form-group">
-            <button type="submit" (click)="registerUser()">Register</button>
-        </div>
-    </form>
+    <div class="inner-container">
+        <h2>Utworz konto</h2>
+        <form>
+            <div class="form-group">
+                <label for="username">Login:</label>
+                <input type="text" id="username" name="username" [(ngModel)]="login" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" [(ngModel)]="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Haslo:</label>
+                <input type="password" id="password" name="password" [(ngModel)]="password1" required>
+            </div>
+            <div class="form-group">
+                <label for="confirm_password">Powtorz haslo:</label>
+                <input type="password" id="confirm_password" name="confirm_password" [(ngModel)]="password2" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" (click)="registerUser()">Zarejestruj sie</button>
+            </div>
+        </form>
 
-    <div class="form-group">
-        <p>Masz juz konto?</p>
-        <button (click)="goToLoginPage()">Zaloguj sie</button>
+        <div class="form-group column-align-center">
+            <p>Masz juz konto?</p>
+            <button (click)="goToLoginPage()">Zaloguj sie</button>
+        </div>
     </div>
 </div>

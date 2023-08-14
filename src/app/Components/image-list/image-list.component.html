@@ -1,9 +1,21 @@
-<div class="image-list">
-    <div class="image-item" *ngFor="let image of images">
-        <img [src]="image.imageUrl" alt="{{ image.filename }}" (click)="onImageClick(image)">
-        <figcaption>{{ image.filename }}</figcaption>
+<div *ngIf="images.length > 0; then areImages else noImages"></div>
+
+<ng-template #areImages>
+    <div class="image-list">
+        <div class="image-item" *ngFor="let image of filteredImages">
+            <img [src]="image.imageUrl" alt="{{ image.filename }}" (click)="onImageClick(image)">
+            <figcaption>{{ image.filename }}</figcaption>
+        </div>
     </div>
-</div>
+
+    <div>
+        <app-filters [images]="images" (filteredItemsChange)="updateFilteredItems($event)"></app-filters>
+    </div>
+</ng-template>
+
+<ng-template #noImages>
+    <p class="no-images"> Nie wstawiono jeszcze zadnego obrazu...</p>
+</ng-template>
 
 <app-selected-image-popup *ngIf="selectedImage" [selectedImage]="selectedImage"
     (close)="selectedImage = null"></app-selected-image-popup>

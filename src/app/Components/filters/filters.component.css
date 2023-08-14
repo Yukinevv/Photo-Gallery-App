@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  width: 400px;
+  border: 1px dashed gray;
+  border-radius: 10px;
+  margin-left: 20px;
+  margin: 20px;
+  padding: 20px;
+  gap: 10px;
+}
+
+input {
+  width: 95%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+button {
+  background-color: #408fa9;
+  color: #fff;
+  border: none;
+  width: 140px;
+  height: 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+button:hover {
+  background-color: #395db0;
+}

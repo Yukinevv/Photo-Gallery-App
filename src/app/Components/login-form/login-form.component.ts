@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../../Models/User';
 import { ApiService } from '../../Services/api.service';
 import { Router } from '@angular/router';
+import { ButtonVisibilityService } from 'src/app/Services/button-visibility.service';
 
 @Component({
   selector: 'app-login-form',
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class LoginFormComponent implements OnInit {
 
-  constructor(private apiService: ApiService, private router: Router) { }
+  constructor(private apiService: ApiService, private router: Router, private settingsButton: ButtonVisibilityService) { }
 
   ngOnInit() {
   }
@@ -33,16 +33,14 @@ export class LoginFormComponent implements OnInit {
         this.login = '';
         this.password = '';
 
-        this.goToMainPage();
+        this.settingsButton.atLogin();
+
+        this.router.navigate(['/categorieList']);
       },
       error => {
         console.error('Error while login:', error);
       }
     );
-  }
-
-  goToMainPage() {
-    this.router.navigate(['/categorieList']);
   }
 
   goToRegisterPage() {

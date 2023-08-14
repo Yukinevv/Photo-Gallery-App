@@ -13,9 +13,13 @@ export class FileUploadComponent {
   constructor(private apiService: ApiService, private dialog: MatDialog) { }
 
   selectedFile: File | undefined;
+  fileName: string = '';
+  spanInnerHTML: string = "Brak wybranego pliku.";
 
   onFileSelected(event: any) {
     this.selectedFile = event.target.files[0];
+    this.fileName = this.selectedFile?.name ?? '';
+    this.spanInnerHTML = `Wybrany plik: ${this.fileName}`;
   }
 
   uploadImage() {

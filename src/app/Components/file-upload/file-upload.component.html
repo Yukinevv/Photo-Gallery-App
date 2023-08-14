@@ -1,4 +1,12 @@
-<form (ngSubmit)="uploadImage()" enctype="multipart/form-data">
-    <input type="file" (change)="onFileSelected($event)" />
-    <button type="submit">Upload Image</button>
-</form>
+<div class="container">
+    <form (ngSubmit)="uploadImage()" enctype="multipart/form-data">
+
+        <input type="file" id="file-input" class="custom-file-input" (change)="onFileSelected($event)" />
+        <div class="file-input-container">
+            <label for="file-input" class="custom-file-label">Wyszukaj plik</label>
+            <span class="selected-file-text" [innerHTML]="spanInnerHTML"></span>
+        </div>
+
+        <button type="submit">Dodaj obraz</button>
+    </form>
+</div>

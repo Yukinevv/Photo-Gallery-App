@@ -1,0 +1,5 @@
+<div class="container">
+    <input type="text" placeholder="Szukaj obrazow" [(ngModel)]="filterField" (input)="filterByName()">
+    <button type="button" (click)="sortByName(1)">Rosnaca</button>
+    <button type="button" (click)="sortByName(2)">Malejaca</button>
+</div>

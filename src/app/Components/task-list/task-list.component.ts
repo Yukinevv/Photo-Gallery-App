@@ -40,11 +40,6 @@ export class TaskListComponent implements OnInit {
     this.tasks = this.taskService.getTasks();
   }
 
-  logOut() {
-    localStorage.setItem('userLogin', '');
-    this.router.navigate(['/login']);
-  }
-
   goToCategorieList() {
     this.router.navigate(['/categorieList']);
   }

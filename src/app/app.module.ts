@@ -15,6 +15,8 @@ import { ImageListComponent } from './Components/image-list/image-list.component
 import { SelectedImagePopupComponent } from './Components/selected-image-popup/selected-image-popup.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CategorieListComponent } from './Components/categorie-list/categorie-list.component';
+import { FiltersComponent } from './Components/filters/filters.component';
+import { SettingsPopupComponent } from './Components/settings-popup/settings-popup.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginFormComponent },
@@ -35,6 +37,8 @@ const appRoutes: Routes = [
     ImageListComponent,
     SelectedImagePopupComponent,
     CategorieListComponent,
+    FiltersComponent,
+    SettingsPopupComponent,
   ],
   imports: [
     BrowserModule,

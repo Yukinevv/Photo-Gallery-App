@@ -1,18 +1,19 @@
-<div>
+<!--<div>
     <input type="text" [(ngModel)]="newTask" placeholder="Dodaj zadanie" />
     <button (click)="addTask()">Dodaj</button>
 </div>
+
 <ul>
     <app-task-item *ngFor="let task of tasks" [task]="task" (removeTask)="removeTask($event)"
         (toggleTask)="toggleTask($event)"></app-task-item>
-</ul>
-<div class="container">
+</ul>-->
+
+<button (click)="goToCategorieList()"><i class="fa-solid fa-arrow-left"></i> &nbsp;&nbsp;Powrot do kategorii</button>
+
+<div>
     <app-image-list></app-image-list>
 </div>
+
 <div>
     <app-file-upload></app-file-upload>
-</div>
-<div>
-    <button (click)="goToCategorieList()">Kategorie</button>
-    <button (click)="logOut()">Wyloguj</button>
 </div>

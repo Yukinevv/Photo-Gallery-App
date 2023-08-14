@@ -1,11 +1,14 @@
 <div class="image-popup">
+    <button class="close-button" (click)="closePopup()">X</button>
+
     <p>Podaj nazwe zdjecia:</p>
     <input type="text" [(ngModel)]="newFilename">
-    <button (click)="changeFilename(newFilename, selectedImage?.id)">Zmien</button>
+    <button class="default-button" (click)="changeFilename(newFilename, selectedImage?.id)">Zmien nazwe</button>
 
     <img [src]="selectedImage?.imageUrl" alt="{{ selectedImage?.filename }}">
     <figcaption>{{ selectedImage?.filename }}</figcaption>
 
-    <button (click)="closePopup()">Close</button>
-    <button (click)="deleteImage(selectedImage?.id)">Delete</button>
+    <div class="justify-center">
+        <button class="default-button delete-button" (click)="deleteImage(selectedImage?.id)">Usun zdjecie</button>
+    </div>
 </div>

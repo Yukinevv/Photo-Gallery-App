@@ -1,5 +1,8 @@
-<div>
-    <div *ngFor="let categorie of categories">
-        <button (click)="goToImageList(categorie)">{{categorie}}</button>
+<div class="container">
+    <div class="inner-container">
+        <h2>Wybierz kategorie obrazow</h2>
+        <div *ngFor="let categorie of categories">
+            <button (click)="goToImageList(categorie)">{{categorie}}</button>
+        </div>
     </div>
 </div>

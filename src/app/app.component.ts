@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ButtonVisibilityService } from './Services/button-visibility.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'test';
+
+  constructor(private settingsButton: ButtonVisibilityService) { }
+
+  isPopupVisible: boolean = false;
+  isButtonVisible: boolean = true;
+
+  isLoggedIn$ = this.settingsButton.isLoggedIn$;
+
+  togglePopup() {
+    this.isPopupVisible = !this.isPopupVisible;
+    this.isButtonVisible = !this.isPopupVisible;
+  }
 }
