@@ -20,6 +20,11 @@ export class ApiService {
     return this.http.post(`${this.apiUrl}/users/login`, user);
   }
 
+  changePassword(newPassword: string, currentPassword: string, login: string) {
+    return this.http.put(`${this.apiUrl}/users/editPassword/${login}/${currentPassword}/${newPassword}`, { responseType: 'text' });
+  }
+
+
   uploadImage(formData: FormData, login: string, category: string) {
     return this.http.post(`${this.apiUrl}/images/upload/${login}/${category}`, formData, { responseType: 'text' });
   }

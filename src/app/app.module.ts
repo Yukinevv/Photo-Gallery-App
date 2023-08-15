@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { RegisterFormComponent } from './Components/register-form/register-form.component';
@@ -46,7 +47,8 @@ const appRoutes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    ReactiveFormsModule
   ],
   exports: [RouterModule],
   providers: [],

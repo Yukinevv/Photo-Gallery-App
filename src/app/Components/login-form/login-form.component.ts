@@ -40,7 +40,8 @@ export class LoginFormComponent implements OnInit {
         this.router.navigate(['/categoryList']);
       },
       error => {
-        this.errorMessage = `Blad podczas logowania: ${error}`;
+        console.log(`Blad podczas logowania: ${error}`);
+        this.errorMessage = "Podano niepoprawne dane!";
       }
     );
   }
