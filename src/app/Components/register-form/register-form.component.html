@@ -1,6 +1,6 @@
 <div class="container">
     <div class="inner-container">
-        <h2>Utworz konto</h2>
+        <h2>Utwórz konto</h2>
         <form (ngSubmit)="registerUser()">
             <div class="form-group">
                 <label for="username">Login:</label>
@@ -15,7 +15,7 @@
                 <input type="password" id="password" name="password" [(ngModel)]="password1" required minlength="5">
             </div>
             <div class="form-group">
-                <label for="confirm_password">Powtorz haslo:</label>
+                <label for="confirm_password">Powtórz hasło:</label>
                 <input type="password" id="confirm_password" name="confirm_password" [(ngModel)]="password2" required
                     minlength="5">
             </div>
