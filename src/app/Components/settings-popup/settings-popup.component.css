@@ -2,6 +2,7 @@
   position: fixed;
   top: 0;
   right: 0;
+  z-index: 2;
 }
 
 .popup-content {
@@ -12,6 +13,15 @@
   margin-top: 20px;
   margin-right: 20px;
   width: 200px;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
 }
 
 .close-button {
@@ -35,7 +45,7 @@
   background-color: #408fa9;
   color: #fff;
   border: none;
-  padding: 0 20px;
+  width: 120px;
   height: 40px;
   border-radius: 5px;
   cursor: pointer;

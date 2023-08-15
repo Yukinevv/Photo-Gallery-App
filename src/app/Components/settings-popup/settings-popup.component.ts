@@ -15,12 +15,18 @@ export class SettingsPopupComponent implements OnInit {
 
   userLogin: string = '';
 
+  isChangePasswordPopupVisible: boolean = false;
+
   ngOnInit(): void {
     this.userLogin = localStorage.getItem("userLogin") ?? '';
   }
 
   closePopup() {
     this.close.emit();
+  }
+
+  toggleChangePasswordPopup() {
+    this.isChangePasswordPopupVisible = !this.isChangePasswordPopupVisible;
   }
 
   logOut() {

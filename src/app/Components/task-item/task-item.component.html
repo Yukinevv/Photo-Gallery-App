@@ -1,5 +1,0 @@
-<li>
-    <input type="checkbox" [(ngModel)]="task!.completed" (change)="toggle()" />
-    <span [ngClass]="{ completed: task!.completed }">{{ task!.name }}</span>
-    <button (click)="remove()">Usuń</button>
-</li>

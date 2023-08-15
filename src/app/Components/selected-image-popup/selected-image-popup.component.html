@@ -3,6 +3,7 @@
 
     <p>Podaj nazwe zdjecia:</p>
     <input type="text" [(ngModel)]="newFilename">
+    <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
     <button class="default-button" (click)="changeFilename(newFilename, selectedImage?.id)">Zmien nazwe</button>
 
     <img [src]="selectedImage?.imageUrl" alt="{{ selectedImage?.filename }}">

@@ -1,3 +1,15 @@
+.file-upload-container {
+  padding-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+  .file-upload-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 button {
   background-color: #408fa9;
   color: #fff;

@@ -1,16 +1,7 @@
-<!--<h2 mat-dialog-title>Confirm Action</h2>
-<div mat-dialog-content>
-    Are you sure you want to perform this action?
-</div>
-<div mat-dialog-actions>
-    <button mat-button (click)="onCancel()">Cancel</button>
-    <button mat-button color="warn" (click)="onConfirm()">Confirm</button>
-</div>-->
-
 <div class="custom-dialog">
-    <h2 class="custom-dialog-title">Potwierdz czynnosc</h2>
+    <h2 class="custom-dialog-title">{{ dialogTitle }}</h2>
     <div class="custom-dialog-content">
-        Czy na pewno chcesz wykonac daną czynnosc?
+        {{ dialogContent }}
     </div>
     <div class="custom-dialog-actions">
         <button mat-button class="custom-dialog-cancel" (click)="onCancel()">Anuluj</button>

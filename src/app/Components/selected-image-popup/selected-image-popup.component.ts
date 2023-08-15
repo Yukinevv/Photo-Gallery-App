@@ -18,6 +18,8 @@ export class SelectedImagePopupComponent {
 
   newFilename: string = '';
 
+  errorMessage: string = '';
+
   closePopup() {
     this.close.emit(); // selectedImage = null
   }
@@ -25,6 +27,10 @@ export class SelectedImagePopupComponent {
   deleteImage(id?: string) {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       width: '400px',
+      data: {
+        dialogTitle: 'Usuniecie obrazu',
+        dialogContent: 'Czy na pewno chcesz usunac ten obraz?'
+      }
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -50,6 +56,10 @@ export class SelectedImagePopupComponent {
   changeFilename(newFilename: string, id?: string) {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       width: '400px',
+      data: {
+        dialogTitle: 'Zmiana nazwy',
+        dialogContent: 'Czy na pewno chcesz zmienic nazwe tego obrazu?'
+      }
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -59,7 +69,7 @@ export class SelectedImagePopupComponent {
 
       const imageId = id ?? "";
       if (imageId === "" || newFilename === "") {
-        console.log('Pole nie moze byc puste!');
+        this.errorMessage = "Nie podano nowej nazwy!";
         return;
       }
 

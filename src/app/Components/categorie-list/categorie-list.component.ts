@@ -14,6 +14,6 @@ export class CategorieListComponent {
 
   goToImageList(categorie: string) {
     localStorage.setItem('category', categorie);
-    this.router.navigate(['/todo']);
+    this.router.navigate(['/main']);
   }
 }

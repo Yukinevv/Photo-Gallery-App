@@ -23,6 +23,8 @@
             </div>
         </form>
 
+        <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+
         <div class="form-group column-align-center">
             <p>Masz juz konto?</p>
             <button (click)="goToLoginPage()">Zaloguj sie</button>

@@ -17,12 +17,14 @@ export class RegisterFormComponent {
   password2: string = '';
   email: string = ''
 
+  errorMessage: string = '';
+
   registerUser() {
     if (this.password1 !== this.password2) {
-      console.log("Podane hasla nie sa takie same!");
+      this.errorMessage = "Podane hasla nie sa takie same!";
       return;
     } else if (this.login === "" || this.password1 === "" || this.email === "") {
-      console.log("Pola nie moga byc puste!");
+      this.errorMessage = "Pola nie moga byc puste!";
       return;
     }
 

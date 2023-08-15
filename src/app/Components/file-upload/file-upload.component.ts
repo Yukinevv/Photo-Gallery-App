@@ -25,6 +25,10 @@ export class FileUploadComponent {
   uploadImage() {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       width: '400px',
+      data: {
+        dialogTitle: 'Dodanie obrazu',
+        dialogContent: 'Czy na pewno chcesz dodac ten obraz?'
+      }
     });
 
     dialogRef.afterClosed().subscribe(result => {

@@ -18,9 +18,11 @@ export class LoginFormComponent implements OnInit {
   login: string = '';
   password: string = '';
 
+  errorMessage: string = '';
+
   loginUser() {
     if (this.login === "" || this.password === "") {
-      console.log("Pola nie moga byc puste!");
+      this.errorMessage = "Pola nie moga byc puste!";
       return;
     }
 
@@ -35,10 +37,10 @@ export class LoginFormComponent implements OnInit {
 
         this.settingsButton.atLogin();
 
-        this.router.navigate(['/categorieList']);
+        this.router.navigate(['/categoryList']);
       },
       error => {
-        console.error('Error while login:', error);
+        this.errorMessage = `Blad podczas logowania: ${error}`;
       }
     );
   }

@@ -54,6 +54,12 @@ h2 {
   background-color: #395db0;
 }
 
+.error-message {
+  color: red;
+  font-size: 14px;
+  text-align: center;
+}
+
 .column-align-center {
   display: flex;
   flex-direction: column;
