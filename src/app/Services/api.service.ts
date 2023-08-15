@@ -12,11 +12,11 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  public createUser(data: any) {
+  createUser(data: any) {
     return this.http.post(`${this.apiUrl}/users/add`, data);
   }
 
-  public login(user: User) {
+  login(user: User) {
     return this.http.post(`${this.apiUrl}/users/login`, user);
   }
 

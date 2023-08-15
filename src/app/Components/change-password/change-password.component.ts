@@ -38,8 +38,8 @@ export class ChangePasswordComponent {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       width: '400px',
       data: {
-        dialogTitle: 'Zmiana hasla',
-        dialogContent: 'Czy na pewno chcesz zmienic swoje haslo?'
+        dialogTitle: 'Zmiana hasła',
+        dialogContent: 'Czy na pewno chcesz zmienić swoje hasło?'
       }
     });
 
@@ -52,16 +52,16 @@ export class ChangePasswordComponent {
       if (userLogin === "") return;
 
       if (this.currentPassword === "" || this.newPassword === "" || this.confirmNewPassword === "") {
-        this.errorMessage = "Pola nie moga byc puste!";
+        this.errorMessage = "Pola nie mogą byc puste!";
         return;
       } else if (this.newPassword !== this.confirmNewPassword) {
-        this.errorMessage = "Nowo podane hasla nie sa takie same!";
+        this.errorMessage = "Nowo podane hasła nie są takie same!";
         return;
       } else if (this.currentPassword === this.newPassword) {
-        this.errorMessage = "Obecne oraz nowe haslo nie moze byc takie same!";
+        this.errorMessage = "Obecne oraz nowe hasło nie może byc takie same!";
         return;
       } else if (this.newPassword.length < 5) {
-        this.errorMessage = "Haslo nie moze miec mniej niz 5 znakow!";
+        this.errorMessage = "Hasło nie może mieć mniej niz 5 znaków!";
         return;
       }
 
@@ -69,10 +69,10 @@ export class ChangePasswordComponent {
         (response: any) => {
           console.log(response);
           if (response.message === "Wrong password") {
-            this.errorMessage = "Podano niepoprawne haslo!";
+            this.errorMessage = "Podano niepoprawne hasło!";
             this.currentPassword = '';
           } else {
-            this.successMessage = "Haslo zostalo zmienione!";
+            this.successMessage = "Hasło zostało zmienione!";
             this.errorMessage = '';
             this.myForm.reset();
           }

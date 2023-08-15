@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ButtonVisibilityService } from './Services/button-visibility.service';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',

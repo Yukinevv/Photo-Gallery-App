@@ -22,7 +22,7 @@ export class LoginFormComponent implements OnInit {
 
   loginUser() {
     if (this.login === "" || this.password === "") {
-      this.errorMessage = "Pola nie moga byc puste!";
+      this.errorMessage = "Uzupełnij wszystkie pola!";
       return;
     }
 
@@ -40,7 +40,7 @@ export class LoginFormComponent implements OnInit {
         this.router.navigate(['/categoryList']);
       },
       error => {
-        console.log(`Blad podczas logowania: ${error}`);
+        console.log(`Błąd podczas logowania: ${error}`);
         this.errorMessage = "Podano niepoprawne dane!";
       }
     );

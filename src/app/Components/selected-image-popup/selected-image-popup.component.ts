@@ -28,8 +28,8 @@ export class SelectedImagePopupComponent {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       width: '400px',
       data: {
-        dialogTitle: 'Usuniecie obrazu',
-        dialogContent: 'Czy na pewno chcesz usunac ten obraz?'
+        dialogTitle: 'Usunięcie obrazu',
+        dialogContent: 'Czy na pewno chcesz usunąć ten obraz?'
       }
     });
 
@@ -58,7 +58,7 @@ export class SelectedImagePopupComponent {
       width: '400px',
       data: {
         dialogTitle: 'Zmiana nazwy',
-        dialogContent: 'Czy na pewno chcesz zmienic nazwe tego obrazu?'
+        dialogContent: 'Czy na pewno chcesz zmienić nazwę tego obrazu?'
       }
     });
 

@@ -5,7 +5,7 @@
         <h2>Witaj {{ userLogin }}!</h2>
 
         <div class="button-container">
-            <button class="default-button" (click)="toggleChangePasswordPopup()">Zmien haslo</button>
+            <button class="default-button" (click)="toggleChangePasswordPopup()">Zmień hasło</button>
             <app-change-password *ngIf="isChangePasswordPopupVisible"
                 (close)="toggleChangePasswordPopup()"></app-change-password>
 

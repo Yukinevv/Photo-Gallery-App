@@ -18,8 +18,8 @@ export class ConfirmDialogComponent {
     }
   }
 
-  dialogTitle: string = 'Potwierdz czynnosc';
-  dialogContent: string = 'Czy na pewno chcesz wykonac daną czynnosc?';
+  dialogTitle: string = 'Potwierdź czynność';
+  dialogContent: string = 'Czy na pewno chcesz wykonać daną czynność?';
 
   onConfirm(): void {
     this.dialogRef.close(true);

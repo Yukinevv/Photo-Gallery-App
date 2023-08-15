@@ -10,7 +10,7 @@ export class CategorieListComponent {
 
   constructor(private router: Router) { }
 
-  categories: string[] = ['Krajobraz', 'Zwierzeta', 'Sport', 'Gry', 'Inne'];
+  categories: string[] = ['Krajobraz', 'Zwierzęta', 'Sport', 'Gry', 'Inne'];
 
   goToImageList(categorie: string) {
     localStorage.setItem('category', categorie);

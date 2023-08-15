@@ -1,12 +1,13 @@
 <div class="header">
     <h1>Photo Gallery App</h1>
 
-    <button *ngIf="isButtonVisible && (isLoggedIn$ | async)" (click)="togglePopup()"><i class="fa-solid fa-user"></i> &nbsp;Profil</button>
+    <button *ngIf="isButtonVisible && (isLoggedIn$ | async)" (click)="togglePopup()"><i class="fa-solid fa-user"></i>
+        &nbsp;Profil</button>
     <app-settings-popup *ngIf="isPopupVisible" (close)="togglePopup()"></app-settings-popup>
 </div>
 
 <router-outlet></router-outlet>
 
 <div class="footer">
-    <p>TNAF 2022/2023 UMK &copy; - Photo Gallery App by Adrian Rodzic 308199</p>
+    <p>TNAF 2022/2023 UMK &copy; - Photo Gallery App | Adrian Rodzic</p>
 </div>

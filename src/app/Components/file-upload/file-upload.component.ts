@@ -27,7 +27,7 @@ export class FileUploadComponent {
       width: '400px',
       data: {
         dialogTitle: 'Dodanie obrazu',
-        dialogContent: 'Czy na pewno chcesz dodac ten obraz?'
+        dialogContent: 'Czy na pewno chcesz dodać ten obraz?'
       }
     });
 

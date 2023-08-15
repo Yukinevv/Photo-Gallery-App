@@ -25,7 +25,7 @@ export class RegisterFormComponent {
       this.errorMessage = "Podane hasla nie sa takie same!";
       return;
     } else if (this.login === "" || this.password1 === "" || this.email === "") {
-      this.errorMessage = "Pola nie moga byc puste!";
+      this.errorMessage = "Uzupełnij wszystkie pola!";
       return;
     } else if (this.password1.length < 5) {
       this.errorMessage = "Haslo nie moze miec mniej niz 5 znakow!";
