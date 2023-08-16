@@ -8,7 +8,8 @@ import { ImageResponse } from '../Models/ImageResponse';
   providedIn: 'root'
 })
 export class ApiService {
-  private apiUrl = 'http://localhost:8080/api';
+  //private apiUrl = 'http://localhost:8080/api';
+  private apiUrl = 'https://photo-gallery-api-59f6baae823c.herokuapp.com/api';
 
   constructor(private http: HttpClient) { }
 
