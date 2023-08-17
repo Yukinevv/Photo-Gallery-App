@@ -1,5 +1,8 @@
 <div class="header">
-    <h1>Photo Gallery App</h1>
+    <div class="app-title" [ngClass]="{'app-title-margin': isLoggedIn$ | async}">
+        <h1>Photo Gallery App</h1>
+        <i class="fa-solid fa-camera"></i>
+    </div>
 
     <button *ngIf="isButtonVisible && (isLoggedIn$ | async)" (click)="togglePopup()"><i class="fa-solid fa-user"></i>
         &nbsp;Profil</button>

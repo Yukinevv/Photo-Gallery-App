@@ -17,6 +17,6 @@ export class AppComponent {
 
   togglePopup() {
     this.isPopupVisible = !this.isPopupVisible;
-    this.isButtonVisible = !this.isPopupVisible;
+    //this.isButtonVisible = !this.isPopupVisible;
   }
 }

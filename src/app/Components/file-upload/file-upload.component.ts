@@ -16,10 +16,34 @@ export class FileUploadComponent {
   fileName: string = '';
   spanInnerHTML: string = "Brak wybranego pliku.";
 
+  isButtonDisabled: boolean = true;
+
   onFileSelected(event: any) {
     this.selectedFile = event.target.files[0];
-    this.fileName = this.selectedFile?.name ?? '';
-    this.spanInnerHTML = `Wybrany plik: ${this.fileName}`;
+
+    const tmp = this.selectedFile?.name ?? '';
+    if (tmp.length > 10) {
+      const tmp2 = tmp.split(".");
+      this.fileName = tmp.substring(0, 10) + "." + tmp2[tmp2.length - 1].toLowerCase();
+    } else {
+      this.fileName = tmp;
+    }
+
+    if (this.selectedFile && this.isFileTypeAllowed(this.selectedFile)) {
+      this.spanInnerHTML = `Wybrany plik: ${this.fileName}`;
+      this.isButtonDisabled = false;
+    } else {
+      this.spanInnerHTML = "Nieprawidłowy format pliku. Proszę wybrać plik .jpg lub .png";
+      this.isButtonDisabled = true;
+    }
+  }
+
+  isFileTypeAllowed(file: File): boolean {
+    const allowedExtensions = ['.jpg', '.jpeg', '.png'];
+    const tmp = file.name.split(".");
+    const fileExtension = '.' + tmp[tmp.length - 1].toLowerCase();
+    //console.log(fileExtension);
+    return allowedExtensions.includes(fileExtension);
   }
 
   uploadImage() {
