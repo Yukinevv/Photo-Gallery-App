@@ -43,6 +43,12 @@ export class RegisterFormComponent {
       },
       error => {
         console.error('Error creating post:', error);
+
+        if (error.status === 403) {
+          this.errorMessage = 'Uzytkownik o podanym loginie juz istnieje!';
+        } else {
+          this.errorMessage = 'Wystąpił błąd podczas rejestracji!';
+        }
       }
     );
 
